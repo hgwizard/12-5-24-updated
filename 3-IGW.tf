@@ -16,7 +16,7 @@ resource "aws_internet_gateway" "virginia_igw" {
   }
 }
 
-resource "aws_internet_gateway" "hon_kong_igw" {
+resource "aws_internet_gateway" "hong_kong_igw" {
   provider = aws.hong_kong
   vpc_id   = aws_vpc.hong_kong_vpc.id
 

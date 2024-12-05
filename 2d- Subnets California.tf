@@ -13,7 +13,7 @@ resource "aws_subnet" "california_subnet_public_1a" {
 resource "aws_subnet" "california_subnet_public_1c" {
   provider          = aws.california
   vpc_id            = aws_vpc.california_vpc.id
-  cidr_block        = "10.31.2.0/24"
+  cidr_block        = "10.31.3.0/24"
   availability_zone = "us-west-1c"
 
   tags = {
@@ -36,7 +36,7 @@ resource "aws_subnet" "california_subnet_private_1a" {
 resource "aws_subnet" "california_subnet_private_1c" {
   provider          = aws.california
   vpc_id            = aws_vpc.california_vpc.id
-  cidr_block        = "10.31.12.0/24"
+  cidr_block        = "10.31.13.0/24"
   availability_zone = "us-west-1c"
 
   tags = {

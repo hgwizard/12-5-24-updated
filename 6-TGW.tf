@@ -1,6 +1,6 @@
 ###### japan ######################
 
-resource "aws_ec2_transit_gateway" "japan_transit" {
+resource "aws_ec2_transit_gateway" "tokyo_transit" {
   
 
 description = "tg-web-backend-database"
@@ -9,32 +9,33 @@ description = "tg-web-backend-database"
   }
 }
 
-resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_public_1a" {
-  #provider = aws.japan
+resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tgw_vpv_attch_public_1a" {
+  #provider = aws.tokyo
   subnet_ids         = [aws_subnet.tokyo_subnet_public_1a.id]
-  transit_gateway_id = aws_ec2_transit_gateway.japan_transit.id
+  transit_gateway_id = aws_ec2_transit_gateway.tokyo_transit.id
   vpc_id             = aws_vpc.tokyo_vpc.id 
 }
 
-/*resource "aws_ec2_transit_gateway_vpc_attachment" "public-ap-northeast-1c" {
-  subnet_ids         = [aws_subnet.public-ap-northeast-1c.id]
-  transit_gateway_id = aws_ec2_transit_gateway.japan_transit.id
-  vpc_id             = aws_vpc.japan_VPC.id
-# }
-# */
-# resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_subnet_private_1a" {
-#   #provider = aws.japan
-#   subnet_ids         = "aws_subnet.private-ap-northeast-1a.id"
-#   transit_gateway_id = aws_ec2_transit_gateway.japan_transit.id
-#   vpc_id             = aws_vpc.tokyo_vpc.id 
-# }
+resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tgw_vpv_attch_public-1c" {
+  subnet_ids         = [aws_subnet.tokyo_subnet_public_1c.id]
+  transit_gateway_id = aws_ec2_transit_gateway.tokyo_transit.id
+  vpc_id             = aws_vpc.tokyo_vpc.id
+}
+ 
 
-# resource "aws_ec2_transit_gateway_vpc_attachment" "private-ap-northeast-1c" {
-#   #provider = aws.japan
-#   subnet_ids         = [aws_subnet.tokyo_subnet_private_1c.id]
-#   transit_gateway_id = aws_ec2_transit_gateway.japan_transit.id
-#   vpc_id             = aws_vpc.tokyo_vpc.id 
-# }
+resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tgw_vpv_attch_private_1a" {
+   #provider = aws.tokyo
+   subnet_ids         = [aws_subnet.tokyo_subnet_private_1a.id]
+   transit_gateway_id = aws_ec2_transit_gateway.tokyo_transit.id
+   vpc_id             = aws_vpc.tokyo_vpc.id 
+ }
+
+resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tgw_vpv_attch_private_1c" {
+   #provider = aws.tokyo
+   subnet_ids         = [aws_subnet.tokyo_subnet_private_1c.id]
+   transit_gateway_id = aws_ec2_transit_gateway.tokyo_transit.id
+   vpc_id             = aws_vpc.tokyo_vpc.id 
+ }
 
 
 
@@ -49,31 +50,7 @@ description = "tg-web-backend-database"
   }
 }
 
-# resource "aws_ec2_transit_gateway_vpc_attachment" "public-us-east-1a" {
-#    #provider = aws.virginia
-#   subnet_ids         = [aws_subnet.public-us-east-1a.id]
-#   transit_gateway_id = aws_ec2_transit_gateway.virginia_transit.id
-#   vpc_id             = aws_vpc.virginia_VPC.id
-# }
 
-# /*resource "aws_ec2_transit_gateway_vpc_attachment" "public-us-east-1b" {
-#   subnet_ids         = [aws_subnet.public-us-east-1b.id]
-#   transit_gateway_id = aws_ec2_transit_gateway.virginia_transit.id
-#   vpc_id             = aws_vpc.virginia_VPC.id
-# }
-
-# resource "aws_ec2_transit_gateway_vpc_attachment" "private-us-east-1a" {
-#   subnet_ids         = [aws_subnet.private-us-east-1a.id]
-#   transit_gateway_id = aws_ec2_transit_gateway.virginia_transit.id
-#   vpc_id             = aws_vpc.virginia_VPC.id
-# }
-
-# resource "aws_ec2_transit_gateway_vpc_attachment" "private-us-east-1b" {
-#   subnet_ids         = [aws_subnet.private-us-east-1b.id]
-#   transit_gateway_id = aws_ec2_transit_gateway.virginia_transit.id
-#   vpc_id             = aws_vpc.virginia_VPC.id
-# }
-# */
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "virginia_public_1a" {
    #provider = aws.virginia
@@ -88,6 +65,14 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "private-storage-us-east-1b" {
   transit_gateway_id = aws_ec2_transit_gateway.virginia_transit.id
   vpc_id             = aws_vpc.virginia_vpc.id
 }
+
+resource "aws_ec2_transit_gateway_vpc_attachment" "private-storage-us-east-1a" {
+   #provider = aws.virginia
+  subnet_ids         = [aws_subnet.virginia_subnet_private_1a.id]
+  transit_gateway_id = aws_ec2_transit_gateway.virginia_transit.id
+  vpc_id             = aws_vpc.virginia_vpc.id
+}
+
 
 ######## HONG KONG #########################################################################
 
