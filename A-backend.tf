@@ -14,5 +14,5 @@ terraform {
 #   vpc_id             = aws_vpc.example.id
 # }
 
-#delete 11-15
+#delete 11-15 its a must
 
