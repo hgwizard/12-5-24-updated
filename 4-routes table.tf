@@ -109,7 +109,17 @@ resource "aws_route_table_association" "tokyo_subnet_public_1c_association" {
   subnet_id      = aws_subnet.tokyo_subnet_public_1c.id
   route_table_id = aws_route_table.tokyo_route_table.id
 }
+resource "aws_route_table_association" "tokyo_subnet_private_1a_association" {
+  provider       = aws.tokyo
+  subnet_id      = aws_subnet.tokyo_subnet_private_1a.id
+  route_table_id = aws_route_table.tokyo_route_table.id
+}
 
+resource "aws_route_table_association" "tokyo_subnet_private_1c_association" {
+  provider       = aws.tokyo
+  subnet_id      = aws_subnet.tokyo_subnet_private_1c.id
+  route_table_id = aws_route_table.tokyo_route_table.id
+}
 #virginia
 
 resource "aws_route_table_association" "virginia_subnet_public_1a_association" {
@@ -124,6 +134,18 @@ resource "aws_route_table_association" "virginia_subnet_public_1b_association" {
   route_table_id = aws_route_table.virginia_route_table.id
 }
 
+resource "aws_route_table_association" "virginia_subnet_private_1a_association" {
+  provider       = aws.virginia
+  subnet_id      = aws_subnet.virginia_subnet_private_1a.id
+  route_table_id = aws_route_table.virginia_route_table.id
+}
+
+resource "aws_route_table_association" "virginia_subnet_private_1b_association" {
+  provider       = aws.virginia
+  subnet_id      = aws_subnet.virginia_subnet_private_1b.id
+  route_table_id = aws_route_table.virginia_route_table.id
+
+}
 
 #hong_kong
 
@@ -136,6 +158,18 @@ resource "aws_route_table_association" "hong_kong_subnet_public_1a_association" 
 resource "aws_route_table_association" "hong_kong_subnet_public_1b_association" {
   provider       = aws.hong_kong
   subnet_id      = aws_subnet.hong_kong_subnet_public_1b.id
+  route_table_id = aws_route_table.hong_kong_route_table.id
+}
+
+resource "aws_route_table_association" "hong_kong_subnet_private_1a_association" {
+  provider       = aws.hong_kong
+  subnet_id      = aws_subnet.hong_kong_subnet_private_1a.id
+  route_table_id = aws_route_table.hong_kong_route_table.id
+}
+
+resource "aws_route_table_association" "hong_kong_subnet_private_1b_association" {
+  provider       = aws.hong_kong
+  subnet_id      = aws_subnet.hong_kong_subnet_private_1b.id
   route_table_id = aws_route_table.hong_kong_route_table.id
 }
 
@@ -153,6 +187,17 @@ resource "aws_route_table_association" "australia_subnet_public_1b_association" 
   route_table_id = aws_route_table.australia_route_table.id
 }
 
+resource "aws_route_table_association" "australia_subnet_priavte_1a_association" {
+  provider       = aws.australia
+  subnet_id      = aws_subnet.australia_subnet_private_1a.id
+  route_table_id = aws_route_table.australia_route_table.id
+}
+
+resource "aws_route_table_association" "australia_subnet_private_1b_association" {
+  provider       = aws.australia
+  subnet_id      = aws_subnet.australia_subnet_private_1b.id
+  route_table_id = aws_route_table.australia_route_table.id
+}
 #california
 
 resource "aws_route_table_association" "california_subnet_public_1a_association" {
@@ -164,6 +209,18 @@ resource "aws_route_table_association" "california_subnet_public_1a_association"
 resource "aws_route_table_association" "california_subnet_public_1c_association" {
   provider       = aws.california
   subnet_id      = aws_subnet.california_subnet_public_1c.id
+  route_table_id = aws_route_table.california_route_table.id
+}
+
+resource "aws_route_table_association" "california_subnet_private_1a_association" {
+  provider       = aws.california
+  subnet_id      = aws_subnet.california_subnet_private_1a.id
+  route_table_id = aws_route_table.california_route_table.id
+}
+
+resource "aws_route_table_association" "california_subnet_private_1c_association" {
+  provider       = aws.california
+  subnet_id      = aws_subnet.california_subnet_private_1c.id
   route_table_id = aws_route_table.california_route_table.id
 }
 
@@ -179,7 +236,17 @@ resource "aws_route_table_association" "london_subnet_public_1b_association" {
   subnet_id      = aws_subnet.london_subnet_public_1b.id
   route_table_id = aws_route_table.london_route_table.id
 }
+resource "aws_route_table_association" "london_subnet_private_1a_association" {
+  provider       = aws.london
+  subnet_id      = aws_subnet.london_subnet_private_1a.id
+  route_table_id = aws_route_table.london_route_table.id
+}
 
+resource "aws_route_table_association" "london_subnet_private_1b_association" {
+  provider       = aws.london
+  subnet_id      = aws_subnet.london_subnet_private_1b.id
+  route_table_id = aws_route_table.london_route_table.id
+}
 #sao_paulo
 
 resource "aws_route_table_association" "sao_paulo_subnet_public_1a_association" {
@@ -191,5 +258,17 @@ resource "aws_route_table_association" "sao_paulo_subnet_public_1a_association" 
 resource "aws_route_table_association" "sao_paulo_subnet_public_1c_association" {
   provider       = aws.sao_paulo
   subnet_id      = aws_subnet.sao_paulo_subnet_public_1c.id
+  route_table_id = aws_route_table.sao_paulo_route_table.id
+}
+
+resource "aws_route_table_association" "sao_paulo_subnet_private_1a_association" {
+  provider       = aws.sao_paulo
+  subnet_id      = aws_subnet.sao_paulo_subnet_private_1a.id
+  route_table_id = aws_route_table.sao_paulo_route_table.id
+}
+
+resource "aws_route_table_association" "sao_paulo_subnet_private_1c_association" {
+  provider       = aws.sao_paulo
+  subnet_id      = aws_subnet.sao_paulo_subnet_private_1c.id
   route_table_id = aws_route_table.sao_paulo_route_table.id
 }

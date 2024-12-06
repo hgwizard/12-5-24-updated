@@ -9,19 +9,19 @@ description = "tg-web-backend-database"
   }
 }
 
-# resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tga_public" {
-#   provider = aws.tokyo
-#   subnet_ids         = [aws_subnet.tokyo_subnet_public_1a.id, aws_subnet.tokyo_subnet_public_1c.id]
-#   transit_gateway_id = aws_ec2_transit_gateway.tokyo_transit.id
-#   vpc_id             = aws_vpc.tokyo_vpc.id 
-# }
-
-resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tga_private" {
+resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tga_public" {
   provider = aws.tokyo
-  subnet_ids         = [aws_subnet.tokyo_subnet_private_1a.id, aws_subnet.tokyo_subnet_private_1c.id]
+  subnet_ids         = [aws_subnet.tokyo_subnet_public_1a.id, aws_subnet.tokyo_subnet_public_1c.id]
   transit_gateway_id = aws_ec2_transit_gateway.tokyo_transit.id
   vpc_id             = aws_vpc.tokyo_vpc.id 
 }
+
+# resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tga_private" {
+#   provider = aws.tokyo
+#   subnet_ids         = [aws_subnet.tokyo_subnet_private_1a.id, aws_subnet.tokyo_subnet_private_1c.id]
+#   transit_gateway_id = aws_ec2_transit_gateway.tokyo_transit.id
+#   vpc_id             = aws_vpc.tokyo_vpc.id 
+# }
 
 
 
