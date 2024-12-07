@@ -28,23 +28,23 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "tokyo_tga_public" {
 
 # ###### virginia  #############################################################################
 
-# resource "aws_ec2_transit_gateway" "virginia_transit" {
-#   provider = aws.virginia
+resource "aws_ec2_transit_gateway" "virginia_transit" {
+  provider = aws.virginia
 
-# description = "tg-web-backend-database"
-#   tags = {
-#     Name = "Web-Backend-Database Transit Gateway"
-#   }
-# }
+description = "tg-web-backend-database"
+  tags = {
+    Name = "Web-Backend-Database Transit Gateway"
+  }
+}
 
 
 
-# resource "aws_ec2_transit_gateway_vpc_attachment" "virginia_public_1a" {
-#    #provider = aws.virginia
-#   subnet_ids         = [aws_subnet.virginia_subnet_public_1a.id]
-#   transit_gateway_id = aws_ec2_transit_gateway.virginia_transit.id
-#   vpc_id             = aws_vpc.virginia_vpc.id
-# }
+resource "aws_ec2_transit_gateway_vpc_attachment" "virginia_public_1a" {
+   #provider = aws.virginia
+  subnet_ids         = [aws_subnet.virginia_subnet_public_1a.id]
+  transit_gateway_id = aws_ec2_transit_gateway.virginia_transit.id
+  vpc_id             = aws_vpc.virginia_vpc.id
+}
 
 # resource "aws_ec2_transit_gateway_vpc_attachment" "private-storage-us-east-1b" {
 #    #provider = aws.virginia
