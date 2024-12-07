@@ -12,7 +12,7 @@ resource "aws_vpc" "virginia_vpc" {
   cidr_block = "10.51.0.0/16"
 
   tags = {
-    Name = "Tokyo VPC"
+    Name = "virginia VPC"
   }
 }
 

@@ -175,21 +175,21 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "virginia_public_1a" {
 
 # ##################### london ################################################################
 
-# resource "aws_ec2_transit_gateway" "london_transit" {
-#   provider = aws.london
+resource "aws_ec2_transit_gateway" "london_transit" {
+  provider = aws.london
 
-# description = "tg-web-backend-database"
-#   tags = {
-#     Name = "Web-Backend-Database Transit Gateway"
-#   }
-# }
+description = "tg-web-backend-database"
+  tags = {
+    Name = "Web-Backend-Database Transit Gateway"
+  }
+}
 
-# resource "aws_ec2_transit_gateway_vpc_attachment" "public-eu-west-2a" {
-#   #provider = aws.london
-#   subnet_ids         = [aws_subnet.london_subnet_public_1a.id]
-#   transit_gateway_id = aws_ec2_transit_gateway.london_transit.id
-#   vpc_id             = aws_vpc.london_vpc.id
-# }
+resource "aws_ec2_transit_gateway_vpc_attachment" "public-eu-west-2a" {
+  provider = aws.london
+  subnet_ids         = [aws_subnet.london_subnet_public_1a.id]
+  transit_gateway_id = aws_ec2_transit_gateway.london_transit.id
+  vpc_id             = aws_vpc.london_vpc.id
+}
 
 # resource "aws_ec2_transit_gateway_vpc_attachment" "private-eu-west-2a" {
 #   #provider = aws.london
